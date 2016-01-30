@@ -784,8 +784,8 @@ There are 3 types of Passengers now, AdultPassenger, ChildPassenger and SeniorPa
             if not include_no_seats:
                 trains = list(filter(lambda x: x.has_seat(), trains))
 
-            if len(trains) == 0:
-                raise NoResultsError()
+            # if len(trains) == 0:
+            #    raise NoResultsError()
 
             return trains
 
