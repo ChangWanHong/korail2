@@ -811,17 +811,17 @@ There are 4 options in ReserveOption class.
         # 좌석 선택 옵션에 따라 결정.
         seat_type = None
         if train.has_seat() is False:  # 자리가 둘다 없는 경우는 SoldOutError발생
-            raise SoldOutError()
+            return
         elif option == ReserveOption.GENERAL_ONLY:  # 이후 일반석, 특실 중 하나는 무조건 있는 조건
             if train.has_general_seat():
                 seat_type = '1'
             else:
-                raise SoldOutError()
+                return
         elif option == ReserveOption.SPECIAL_ONLY:
             if train.has_special_seat():
                 seat_type = '2'
             else:
-                raise SoldOutError()
+                return
         elif option == ReserveOption.GENERAL_FIRST:
             if train.has_general_seat():
                 seat_type = '1'
